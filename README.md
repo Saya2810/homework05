@@ -19,7 +19,9 @@ The goal is to:
 
 The main implementation is in `homework05.jl`.
 Terminal output:
+
     julia homework05.jl "Soraya Thiess"
+    
 Hello Soraya! Your API_KEY key is set!
 u = ComplexF64[1.4142135623730951 + 0.0im, 0.0 + 0.0im, 0.0 + 0.0im, 0.0 + 0.0im]
 Reconstructed E  = 1.0000000000000002
