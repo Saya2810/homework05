@@ -20,8 +20,7 @@ The goal is to:
 The main implementation is in `homework05.jl`.
 Terminal output:
 
-    julia homework05.jl "Soraya Thiess"
-    
+   ``` julia homework05.jl "Soraya Thiess"
 Hello Soraya! Your API_KEY key is set!
 u = ComplexF64[1.4142135623730951 + 0.0im, 0.0 + 0.0im, 0.0 + 0.0im, 0.0 + 0.0im]
 Reconstructed E  = 1.0000000000000002
@@ -47,7 +46,7 @@ Reconstructed m  = 108.18941344993783
 Reconstructed E  = 306.3306886414816
 Reconstructed p  = (163.88722381503834, -177.99945438109432, -153.59268775288422)
 Reconstructed S  = (-0.07863045509938081, 0.20434260008508986, -0.046440673590495536)
-
+```
 
 You can round the numbers to 2 decimals in your head.
 
