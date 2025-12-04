@@ -1,4 +1,8 @@
 # Homework 05 – Dirac Spinors and Personalized Name Spinor
+Names: Soraya Thiess.
+    
+       Bero Verfürth?
+
 
 This project contains my solution for Homework 05 on free Dirac spinors.  
 The goal is to:
