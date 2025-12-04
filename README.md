@@ -4,7 +4,7 @@ Names: Soraya Thiess.
        Bero Verfürth?
 
 
-This project contains my solution for Homework 05 on free Dirac spinors.  
+This project contains our solution for Homework 05 on free Dirac spinors.  
 The goal is to:
 
 1. Construct a **personalized 4‑component spinor** from a first and last name.
