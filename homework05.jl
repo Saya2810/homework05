@@ -292,40 +292,6 @@ end
 # --- Beispiel: u-Spinor im Ruhesystem, Spin nach +z -------------------------
 
 if abspath(PROGRAM_FILE) == @__FILE__
-    m  = 1.0
-    p  = (0.0, 0.0, 0.0)          # Ruhesystem
-    θχ = 0.0                      # Spin nach +z
-    ϕχ = 0.0
-
-    u = u_spinor(m, p, θχ, ϕχ)
-
-    println("u = ", u)
-
-    E = energy(u)
-    m_rec = mass_u(u)
-    p_rec = momentum(u)
-    S_rec = spin_u(u)
-
-    println("Reconstructed E  = ", E)
-    println("Reconstructed m  = ", m_rec)
-    println("Reconstructed p  = ", p_rec)
-    println("Reconstructed S  = ", S_rec)
-
-    # --- Example: Closest valid u-spinor to arbitrary spinor φ --------------
-    φ = ℂ[1+0im, 2-1im, 3+0.5im, 4-2im]
-    d_min, ψ_best, params_best = closest_valid_spinor(φ; kind = :u, N = 20_000)
-    println("\nOriginal spinor φ = ", φ)
-    println("Closest valid u-spinor ψ_best = ", ψ_best)
-    println("Minimal distance d_min = ", d_min)
-    println("Parameters params_best = ", params_best)
-    m_b = mass_u(ψ_best)
-    E_b = energy(ψ_best)
-    p_b = momentum(ψ_best)
-    S_b = spin_u(ψ_best)
-    println("Reconstructed m  = ", m_b)
-    println("Reconstructed E  = ", E_b)
-    println("Reconstructed p  = ", p_b)
-    println("Reconstructed S  = ", S_b)
 
     # --- Example: use first and last name from command line ----------------
     # If you call the script as:
@@ -335,6 +301,42 @@ if abspath(PROGRAM_FILE) == @__FILE__
         full_name = join(ARGS, " ")
         analyze_name(full_name; kind = :u, N = 20_000)
     else
+        m  = 1.0
+        p  = (0.0, 0.0, 0.0)          # Ruhesystem
+        θχ = 0.0                      # Spin nach +z
+        ϕχ = 0.0
+
+        u = u_spinor(m, p, θχ, ϕχ)
+
+        println("==== Demonstration with an arbitrary spinor ====")
+        println("u = ", u)
+
+        E = energy(u)
+        m_rec = mass_u(u)
+        p_rec = momentum(u)
+        S_rec = spin_u(u)
+
+        println("Reconstructed E  = ", E)
+        println("Reconstructed m  = ", m_rec)
+        println("Reconstructed p  = ", p_rec)
+        println("Reconstructed S  = ", S_rec)
+
+        # --- Example: Closest valid u-spinor to arbitrary spinor φ --------------
+        φ = ℂ[1+0im, 2-1im, 3+0.5im, 4-2im]
+        d_min, ψ_best, params_best = closest_valid_spinor(φ; kind = :u, N = 20_000)
+        println("\nOriginal spinor φ = ", φ)
+        println("Closest valid u-spinor ψ_best = ", ψ_best)
+        println("Minimal distance d_min = ", d_min)
+        println("Parameters params_best = ", params_best)
+        m_b = mass_u(ψ_best)
+        E_b = energy(ψ_best)
+        p_b = momentum(ψ_best)
+        S_b = spin_u(ψ_best)
+        println("Reconstructed m  = ", m_b)
+        println("Reconstructed E  = ", E_b)
+        println("Reconstructed p  = ", p_b)
+        println("Reconstructed S  = ", S_b)
+        println("\n")
         # Fallback demo with a hard-coded example name
         analyze_name("Max Mustermann"; kind = :u, N = 20_000)
     end
